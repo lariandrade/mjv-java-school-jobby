@@ -35,5 +35,12 @@ public class Cadastro {
     @Embedded
     private Endereco endereco;
 
+    @Embedded
+    private PretencaoSalarial pretencaoSalarial;
+
+    @OneToOne
+    @JoinColumn(name = "profissao_id")
+    private Profissao profissao;
+
 
 }
