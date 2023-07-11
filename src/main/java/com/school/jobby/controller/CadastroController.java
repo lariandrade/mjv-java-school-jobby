@@ -1,6 +1,6 @@
 package com.school.jobby.controller;
 
-import com.school.jobby.dto.DadosCadastro;
+import com.school.jobby.dto.DadosCadastroDTO;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,8 +14,8 @@ public class CadastroController {
 
 
     @PostMapping
-    public void cadastro(@RequestBody @Valid DadosCadastro dados) {
-       System.out.println(dados);
+    public ResponseEntity cadastro(@RequestBody @Valid DadosCadastroDTO dados) {
+       return ResponseEntity.ok("Candidato cadastrado");
     }
 
 }
