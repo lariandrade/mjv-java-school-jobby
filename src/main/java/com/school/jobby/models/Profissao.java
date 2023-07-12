@@ -1,5 +1,6 @@
 package com.school.jobby.models;
 
+import com.school.jobby.dto.DadosProfissaoDTO;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Data;
@@ -14,4 +15,8 @@ public class Profissao {
     @Setter(AccessLevel.NONE)
     private Integer id;
     private String nome;
+
+    public Profissao(DadosProfissaoDTO dados) {
+        this.nome = dados.nome();
+    }
 }

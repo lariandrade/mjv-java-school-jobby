@@ -1,5 +1,6 @@
 package com.school.jobby.models;
 
+import com.school.jobby.dto.DadosCadastroDTO;
 import com.school.jobby.enums.Sexo;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -38,8 +39,22 @@ public class Cadastro {
     @Embedded
     private PretencaoSalarial pretencaoSalarial;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "profissao_id")
     private Profissao profissao;
 
+    public Cadastro(DadosCadastroDTO dados) {
+        this.nome = dados.nome();
+        this.CPF = dados.CPF();
+        this.dataNascimento = dados.dataNascimento();
+        this.telefone = dados.telefone();
+        this.email = dados.email();
+        this.sexo = dados.sexo();
+        this.celular = dados.celular();
+        this.endereco = new Endereco(dados.endereco());
+        this.profissao = new Profissao(dados.profissao());
+        this.pretencaoSalarial = dados.pretencaoSalarial();
+        //this.habilidades = dados.habilidade();
+
+    }
 }
