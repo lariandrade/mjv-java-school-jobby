@@ -10,6 +10,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public record DadosCadastroDTO(
         @NotBlank
@@ -37,9 +38,9 @@ public record DadosCadastroDTO(
         PretencaoSalarial pretencaoSalarial,
         @NotNull
         @Valid
-        DadosProfissaoDTO profissao
-
-        //List habilidades
+        DadosProfissaoDTO profissao,
+        @NotNull
+        String habilidades
 
 ) {
 

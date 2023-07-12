@@ -25,7 +25,8 @@ public class Cadastro {
     private LocalDate dataNascimento;
     private Long telefone;
     private String email;
-    private List<String> habilidades;
+
+    private String habilidades;
 
     @Enumerated(EnumType.STRING)
     private Sexo sexo;
@@ -54,7 +55,6 @@ public class Cadastro {
         this.endereco = new Endereco(dados.endereco());
         this.profissao = new Profissao(dados.profissao());
         this.pretencaoSalarial = dados.pretencaoSalarial();
-        //this.habilidades = dados.habilidade();
-
+        this.habilidades = dados.habilidades();
     }
 }
