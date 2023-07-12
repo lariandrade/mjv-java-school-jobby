@@ -2,15 +2,21 @@ package com.school.jobby.models;
 
 import com.school.jobby.enums.RegimeContratacao;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.Data;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "tb_cadastroExperiencia")
+@Data
 public class CadastroExperiencia {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Setter(AccessLevel.NONE)
+    private Integer id;
     private Double salario;
     private boolean EmpregoAtual;
     private LocalDateTime dataContratação;

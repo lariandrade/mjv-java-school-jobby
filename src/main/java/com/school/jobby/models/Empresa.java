@@ -1,16 +1,19 @@
 package com.school.jobby.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.Data;
+import lombok.Setter;
 
 @Entity
+@Table(name = "tb_empresa")
+@Data
 public class Empresa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Setter(AccessLevel.NONE)
+    private Integer id;
     private String nome;
 
 }
