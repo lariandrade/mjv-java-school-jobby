@@ -1,5 +1,6 @@
 package com.school.jobby.models;
 
+import com.school.jobby.dtos.cadastro.candidato.DadosCidadeDTO;
 import com.school.jobby.dtos.cadastro.candidato.DadosEnderecoDTO;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Embeddable;
@@ -18,7 +19,7 @@ public class Endereco {
     private String complemento;
     private String bairro;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "cidade_id")
     private Cidade cidade;
 
@@ -29,5 +30,20 @@ public class Endereco {
         this.numero = dados.numero();
         this.complemento = dados.complemento();
         this.cidade = new Cidade(dados.cidade());
+    }
+
+    public void setCidade(DadosCidadeDTO cidade) {
+        if (cidade.estado() != null) {
+            this.cidade.setEstado(cidade.estado());
+        }
+
+        if (cidade.nome() != null) {
+            this.cidade.setNome(cidade.nome());
+        }
+
+        if (cidade.sigla() != null) {
+            this.cidade.setSigla(cidade.sigla());
+        }
+
     }
 }

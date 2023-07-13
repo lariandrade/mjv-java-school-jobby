@@ -1,6 +1,9 @@
 package com.school.jobby.models;
 
+import com.school.jobby.dtos.cadastro.candidato.DadosAtualizacaoCadastro;
 import com.school.jobby.dtos.cadastro.candidato.DadosCadastroDTO;
+import com.school.jobby.dtos.cadastro.candidato.DadosEnderecoDTO;
+import com.school.jobby.dtos.cadastro.candidato.DadosProfissaoDTO;
 import com.school.jobby.enums.Sexo;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -26,7 +29,6 @@ public class Cadastro {
     private LocalDate dataNascimento;
     private Long telefone;
     private String email;
-
     private String habilidades;
 
     @Enumerated(EnumType.STRING)
@@ -34,14 +36,13 @@ public class Cadastro {
 
     @Embedded
     private Celular celular;
-
     @Embedded
     private Endereco endereco;
 
     @Embedded
     private PretencaoSalarial pretencaoSalarial;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "profissao_id")
     private Profissao profissao;
 
@@ -58,4 +59,39 @@ public class Cadastro {
         this.pretencaoSalarial = dados.pretencaoSalarial();
         this.habilidades = dados.habilidades();
     }
+
+    public void setEndereco(DadosEnderecoDTO endereco) {
+        if (endereco.logradouro() != null) {
+            this.endereco.setLogradouro(endereco.logradouro());
+        }
+
+        if (endereco.bairro() != null) {
+            this.endereco.setBairro(endereco.bairro());
+        }
+
+        if (endereco.cep() != null) {
+            this.endereco.setCep(endereco.cep());
+        }
+
+        if (endereco.complemento() != null) {
+            this.endereco.setComplemento(endereco.complemento());
+        }
+
+        if (endereco.cidade() != null) {
+            this.endereco.setCidade(endereco.cidade());
+        }
+
+        if (endereco.numero() != null) {
+            this.endereco.setNumero(endereco.numero());
+        }
+
+    }
+
+    public void setProfissao(DadosProfissaoDTO profissao) {
+        if (profissao.nome() != null) {
+            this.profissao.setNome(profissao.nome());
+        }
+
+    }
+
 }
