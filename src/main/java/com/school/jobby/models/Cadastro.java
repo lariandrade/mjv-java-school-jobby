@@ -1,18 +1,19 @@
 package com.school.jobby.models;
 
-import com.school.jobby.dto.DadosCadastroDTO;
+import com.school.jobby.dtos.cadastro.candidato.DadosCadastroDTO;
 import com.school.jobby.enums.Sexo;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Table(name = "tb_cadastro")
 @Data
+@NoArgsConstructor
 public class Cadastro {
 
     @Id

@@ -1,4 +1,4 @@
-package com.school.jobby.dto;
+package com.school.jobby.dtos.cadastro.candidato;
 
 import jakarta.validation.constraints.NotBlank;
 

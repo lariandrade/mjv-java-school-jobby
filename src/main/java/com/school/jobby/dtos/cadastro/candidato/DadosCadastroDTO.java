@@ -1,4 +1,4 @@
-package com.school.jobby.dto;
+package com.school.jobby.dtos.cadastro.candidato;
 
 import com.school.jobby.enums.Sexo;
 import com.school.jobby.models.Celular;
@@ -10,7 +10,6 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public record DadosCadastroDTO(
         @NotBlank

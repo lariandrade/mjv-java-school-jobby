@@ -1,14 +1,16 @@
 package com.school.jobby.models;
 
-import com.school.jobby.dto.DadosCidadeDTO;
+import com.school.jobby.dtos.cadastro.candidato.DadosCidadeDTO;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "tb_cidade")
 @Data
+@NoArgsConstructor
 public class Cidade {
 
     @Id

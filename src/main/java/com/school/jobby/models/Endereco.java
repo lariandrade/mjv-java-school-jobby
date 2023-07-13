@@ -1,6 +1,6 @@
 package com.school.jobby.models;
 
-import com.school.jobby.dto.DadosEnderecoDTO;
+import com.school.jobby.dtos.cadastro.candidato.DadosEnderecoDTO;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
