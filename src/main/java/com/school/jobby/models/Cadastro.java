@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_cadastro")
@@ -45,6 +46,9 @@ public class Cadastro {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "profissao_id")
     private Profissao profissao;
+
+    @OneToMany(mappedBy = "cadastro")
+    private List<CadastroExperiencia> experiencias;
 
     public Cadastro(DadosCadastroDTO dados) {
         this.nome = dados.nome();
