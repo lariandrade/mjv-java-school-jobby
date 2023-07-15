@@ -22,6 +22,7 @@ public class CadastroExperienciaService {
 
     public DadosDetalhamentoExperiencia save(DadosExperienciaDTO dto) {
         CadastroExperiencia cadExperiencia = new CadastroExperiencia(dto);
+        dto.cadastro();
 
         if (dto.empregoAtual() != null) {
             cadExperiencia.setEmpregoAtual(dto.empregoAtual());
@@ -33,6 +34,7 @@ public class CadastroExperienciaService {
         }
 
         cadastroExperienciaRepository.save(cadExperiencia);
+
         DadosDetalhamentoExperiencia dados = new DadosDetalhamentoExperiencia(cadExperiencia);
 
         return dados;

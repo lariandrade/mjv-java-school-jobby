@@ -26,12 +26,13 @@ public class CadastroController {
     @PostMapping
     public ResponseEntity create(@RequestBody @Valid DadosCadastroDTO dados) {
         DadosDetalhamentoCadastro dadosDetalhamento = cadastroService.save(dados);
-        return ResponseEntity.ok(dadosDetalhamento);
+        return ResponseEntity.status(HttpStatus.CREATED).body(dadosDetalhamento);
     }
 
     @GetMapping
     public ResponseEntity<List<Cadastro>> getAll() {
-        return ResponseEntity.status(HttpStatus.OK).body(cadastroService.findAll());
+        List<Cadastro> cadastros = cadastroService.findAll();
+        return ResponseEntity.status(HttpStatus.OK).body(cadastros);
     }
 
     @GetMapping("/{id}")

@@ -1,5 +1,7 @@
 package com.school.jobby.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.school.jobby.dtos.cadastro.candidato.DadosAtualizacaoCadastro;
 import com.school.jobby.dtos.cadastro.candidato.DadosCadastroDTO;
 import com.school.jobby.dtos.cadastro.candidato.DadosEnderecoDTO;
@@ -10,6 +12,8 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -47,7 +51,9 @@ public class Cadastro {
     @JoinColumn(name = "profissao_id")
     private Profissao profissao;
 
-    @OneToMany(mappedBy = "cadastro")
+    @OneToMany(mappedBy = "cadastro", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    //private CadastroExperiencia experiencia;
     private List<CadastroExperiencia> experiencias;
 
     public Cadastro(DadosCadastroDTO dados) {
@@ -97,5 +103,4 @@ public class Cadastro {
         }
 
     }
-
 }

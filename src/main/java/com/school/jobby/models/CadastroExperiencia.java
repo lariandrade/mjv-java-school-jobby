@@ -1,5 +1,8 @@
 package com.school.jobby.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.school.jobby.dtos.cadastro.candidato.DadosProfissaoDTO;
 import com.school.jobby.dtos.cadastro.experiencia.DadosExperienciaDTO;
 import com.school.jobby.enums.RegimeContratacao;
@@ -35,8 +38,9 @@ public class CadastroExperiencia {
     @JoinColumn(name = "profissao_id")
     private Profissao profissao;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cadastro_id")
+    @JsonBackReference
     private Cadastro cadastro;
 
     public CadastroExperiencia(DadosExperienciaDTO dados) {
