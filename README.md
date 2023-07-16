@@ -50,7 +50,7 @@ spring.datasource.username=<insira seu nome de usuario>
 spring.datasource.password=<insira sua senha>
 ```
 
-A API poderá ser acessada em [localhost:8080](http://localhost:8080).
+A API poderá ser acessada em [localhost:8080](http://localhost:8080)
 
 O Swagger poderá ser visualizado em [localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 
@@ -101,7 +101,7 @@ Após cadastrar o candidato e fornecer suas experiências profissionais, o JSON 
     },
     "experiencias": [
         {
-            "id": 6,
+            "id": 8,
             "nomeEmpresa": "Microsoft",
             "salario": 3500.0,
             "empregoAtual": false,
