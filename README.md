@@ -66,54 +66,54 @@ Após cadastrar o candidato e fornecer suas experiências profissionais, o JSON 
 
 ```
 {
+  "id": 8,
+  "nome": "larissa",
+  "cpf": "123.456.789-10",
+  "dataNascimento": "1997-08-23",
+  "telefone": 911111111,
+  "email": "larissa@gmail.com",
+  "habilidades": "Java, Spring, MySQL",
+  "sexo": "FEMININO",
+  "celular": {
+    "numero_celular": 1234567890,
+    "whatsapp": true
+  },
+  "endereco": {
+    "cep": 13212000,
+    "logradouro": "Rua Flores",
+    "numero": "4245",
+    "complemento": null,
+    "bairro": "Colonia",
+    "cidade": {
+      "id": 8,
+      "nome": "Jundiaí",
+      "estado": "São Paulo",
+      "sigla": "SP"
+    }
+  },
+  "pretencaoSalarial": {
+    "valorMinimo": 1567.64,
+    "valorMaximo": 2500
+  },
+  "profissao": {
     "id": 8,
-    "nome": "larissa",
-    "cpf": "123.456.789-10",
-    "dataNascimento": "1997-08-23",
-    "telefone": 911111111,
-    "email": "larissa@gmail.com",
-    "habilidades": "Java, Spring, MySQL",
-    "sexo": "FEMININO",
-    "celular": {
-        "numero_celular": 1234567890,
-        "whatsapp": true
-    },
-    "endereco": {
-        "cep": 13212000,
-        "logradouro": "Rua Flores",
-        "numero": "4245",
-        "complemento": null,
-        "bairro": "Colonia",
-        "cidade": {
-            "id": 8,
-            "nome": "Jundiaí",
-            "estado": "São Paulo",
-            "sigla": "SP"
-        }
-    },
-    "pretencaoSalarial": {
-        "valorMinimo": 1567.64,
-        "valorMaximo": 2500.00
-    },
-    "profissao": {
+    "nome": "programadora"
+  },
+  "experiencias": [
+    {
+      "id": 8,
+      "nomeEmpresa": "Microsoft",
+      "salario": 3500,
+      "empregoAtual": false,
+      "dataContratacao": "2023-07-14",
+      "dataDesligamento": "2023-07-15",
+      "regimeContratacao": "CLT",
+      "profissao": {
         "id": 8,
         "nome": "programadora"
-    },
-    "experiencias": [
-        {
-            "id": 8,
-            "nomeEmpresa": "Microsoft",
-            "salario": 3500.0,
-            "empregoAtual": false,
-            "dataContratacao": "2023-07-14",
-            "dataDesligamento": "2023-07-15",
-            "regimeContratacao": "CLT",
-            "profissao": {
-                "id": 8,
-                "nome": "programadora"
-            }
-        }
-    ]
+      }
+    }
+  ]
 }
 
 ```
