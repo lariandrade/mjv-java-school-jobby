@@ -9,6 +9,10 @@
 ## Descrição do Projeto
 Plataforma destinada ao armazenamento de dados pessoais e profissionais para em seguida proporcionar uma listagem de profissionais, suas experiências e habilidades destinadas para auxilar no processo de recrutamento e seleção de uma empresa de tecnologia. 
 
+## Proposta
+Para o desafio foi fornecido o seguinte diagrama:
+
+![image](https://github.com/lariandrade/mjv-java-school-jobby/assets/44838761/c86dbf69-7499-4fbf-98c4-df6001820aa3)
 
 ## Funcionalidades
 - CRUD Candidatos
@@ -62,7 +66,7 @@ Após cadastrar o candidato e fornecer suas experiências profissionais, o JSON 
 
 ```
 {
-    "id": 1,
+    "id": 8,
     "nome": "larissa",
     "cpf": "123.456.789-10",
     "dataNascimento": "1997-08-23",
@@ -81,7 +85,7 @@ Após cadastrar o candidato e fornecer suas experiências profissionais, o JSON 
         "complemento": null,
         "bairro": "Colonia",
         "cidade": {
-            "id": 1,
+            "id": 8,
             "nome": "Jundiaí",
             "estado": "São Paulo",
             "sigla": "SP"
@@ -92,7 +96,7 @@ Após cadastrar o candidato e fornecer suas experiências profissionais, o JSON 
         "valorMaximo": 2500.00
     },
     "profissao": {
-        "id": 1,
+        "id": 8,
         "nome": "programadora"
     },
     "experiencias": [
@@ -105,8 +109,8 @@ Após cadastrar o candidato e fornecer suas experiências profissionais, o JSON 
             "dataDesligamento": "2023-07-15",
             "regimeContratacao": "CLT",
             "profissao": {
-                "id": 3,
-                "nome": "Desenvolvedora"
+                "id": 8,
+                "nome": "programadora"
             }
         }
     ]
