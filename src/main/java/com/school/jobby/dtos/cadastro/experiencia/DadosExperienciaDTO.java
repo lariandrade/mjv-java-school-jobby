@@ -23,5 +23,4 @@ public record DadosExperienciaDTO(
         RegimeContratacao regimeContratacao,
         @NotNull
         DadosProfissaoDTO profissao,
-
         Cadastro cadastro) {}

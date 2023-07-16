@@ -6,7 +6,6 @@ import com.school.jobby.dtos.cadastro.candidato.DadosDetalhamentoCadastro;
 import com.school.jobby.models.Cadastro;
 import com.school.jobby.service.CadastroService;
 import jakarta.validation.Valid;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,19 +37,15 @@ public class CadastroController {
     @GetMapping("/{id}")
     public ResponseEntity<Object> getOne(@PathVariable Integer id) {
         Optional<Cadastro> cadastro = cadastroService.findById(id);
-
         if (cadastro.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Candidato não encontrado");
         }
-
         return ResponseEntity.status(HttpStatus.OK).body(cadastro.get());
     }
 
     @PutMapping("/{id}")
     public ResponseEntity update(@PathVariable Integer id, @RequestBody DadosAtualizacaoCadastro dados) {
-
         ResponseEntity<String> response;
-
         try {
 
             DadosDetalhamentoCadastro dadosDetalhamentoCadastro = cadastroService.update(id, dados);
@@ -58,22 +53,17 @@ public class CadastroController {
 
         } catch (NoSuchElementException e) {
             response = ResponseEntity.status(HttpStatus.NOT_FOUND).body("Candidato não encontrado");
-
         }
-
         return response;
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable Integer id) {
         Optional<Cadastro> cadastro = cadastroService.findById(id);
-
         if (cadastro.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Candidato não encontrado");
         }
-
         cadastroService.delete(cadastro.get());
-
         return ResponseEntity.status(HttpStatus.OK).body("Candidato deletado com sucesso.");
     }
 

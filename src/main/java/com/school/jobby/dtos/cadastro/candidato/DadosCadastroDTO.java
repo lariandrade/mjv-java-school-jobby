@@ -39,8 +39,4 @@ public record DadosCadastroDTO(
         @Valid
         DadosProfissaoDTO profissao,
         @NotNull
-        String habilidades
-
-) {
-
-}
+        String habilidades) {}

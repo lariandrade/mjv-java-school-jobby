@@ -1,8 +1,6 @@
 package com.school.jobby.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.school.jobby.dtos.cadastro.candidato.DadosAtualizacaoCadastro;
 import com.school.jobby.dtos.cadastro.candidato.DadosCadastroDTO;
 import com.school.jobby.dtos.cadastro.candidato.DadosEnderecoDTO;
 import com.school.jobby.dtos.cadastro.candidato.DadosProfissaoDTO;
@@ -12,9 +10,6 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
-
 import java.time.LocalDate;
 import java.util.List;
 
@@ -23,30 +18,24 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 public class Cadastro {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
     private Integer id;
-
     private String nome;
     private String CPF;
     private LocalDate dataNascimento;
     private Long telefone;
     private String email;
     private String habilidades;
-
     @Enumerated(EnumType.STRING)
     private Sexo sexo;
-
     @Embedded
     private Celular celular;
     @Embedded
     private Endereco endereco;
-
     @Embedded
     private PretencaoSalarial pretencaoSalarial;
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "profissao_id")
     private Profissao profissao;

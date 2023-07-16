@@ -1,6 +1,5 @@
 package com.school.jobby.controller;
 
-import com.school.jobby.dtos.cadastro.candidato.DadosDetalhamentoCadastro;
 import com.school.jobby.dtos.cadastro.experiencia.DadosAtualizacaoExperiencia;
 import com.school.jobby.dtos.cadastro.experiencia.DadosDetalhamentoExperiencia;
 import com.school.jobby.dtos.cadastro.experiencia.DadosExperienciaDTO;
@@ -29,10 +28,9 @@ public class CadastroExperienciaController {
         try {
             DadosDetalhamentoExperiencia dadosDetalhamento = cadastroExperienciaService.save(dados);
             return ResponseEntity.ok(dadosDetalhamento);
-        } catch(ValidacaoException e){
+        } catch (ValidacaoException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
-
     }
 
     @GetMapping
@@ -64,13 +62,10 @@ public class CadastroExperienciaController {
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable Integer id) {
         Optional<CadastroExperiencia> cadExperiencia = cadastroExperienciaService.findById(id);
-
         if (cadExperiencia.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Experiencia não encontrada");
         }
-
         cadastroExperienciaService.delete(cadExperiencia.get());
-
         return ResponseEntity.status(HttpStatus.OK).body("Experiencia deletada com sucesso.");
     }
 }

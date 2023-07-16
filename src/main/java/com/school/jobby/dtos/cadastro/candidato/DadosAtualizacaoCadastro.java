@@ -5,7 +5,6 @@ import com.school.jobby.models.Celular;
 import com.school.jobby.models.PretencaoSalarial;
 
 public record DadosAtualizacaoCadastro(
-
         String nome,
         Long telefone,
         String email,
@@ -14,5 +13,4 @@ public record DadosAtualizacaoCadastro(
         Celular celular,
         PretencaoSalarial pretencaoSalarial,
         DadosProfissaoDTO profissao,
-        String habilidades) {
-}
+        String habilidades) {}

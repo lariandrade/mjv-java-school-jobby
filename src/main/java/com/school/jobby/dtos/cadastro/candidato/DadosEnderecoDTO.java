@@ -16,9 +16,5 @@ public record DadosEnderecoDTO(
         String bairro,
         @NotNull
         @Valid
-        DadosCidadeDTO cidade
-
-) {
-
-}
+        DadosCidadeDTO cidade){}
 
